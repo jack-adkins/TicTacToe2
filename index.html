@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic-Tac-Toe Part 2</title>
+        <style>
+            body {display: flex; flex-direction: column; align-items: center; background-color: #ffffff; margin: 0; padding-top: 50px;}
+            .turn {border: 2px solid #000000; padding: 10px; margin-bottom: 20px; font-size: 24px;}
+            .winGame {border: 2px solid #000000; padding: 10px; margin-bottom: 20px; font-size: 24px;}
+            .board {display: flex; flex-wrap: wrap; width: 300px; height: 300px; margin-bottom: 20px;}
+            .square {width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; background-color: #ffffff;
+                border: 2px solid #000000; font-size: 60px; font-weight: bold; cursor: pointer; box-sizing: border-box;}
+            .square:hover {background-color: #aea9a9;}
+            h1 {font-size: 60px;}
+        </style>
+    </head>
+    <body>
+        <h1>Tic Tac Toe Showdown!</h1>
+
+        <div class="turn" id="turn">Turn: X</div>
+        <div class="board" id="board"></div>
+        <div class="winGame" id="winGame">In Progress</div>
+
+        <script>
+            const NUM_SQUARES = 9;
+            for (let i = 0; i < NUM_SQUARES; i++) {
+                let id = "sq" + i;
+                document.getElementById('board').innerHTML += "<div class='square' id='" + id + "'></div>";
+            }
+            // Squares are numbered in row-major order with starting at sq0
+            document.getElementById("sq2").textContent = "X";
+            document.getElementById("sq3").textContent = "O";
+        </script>
+    </body>
+</html>
